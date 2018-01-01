@@ -17,8 +17,7 @@ RUN apt-get update \
 		gnupg \
 		supervisor
 		
-RUN DEBIAN_FRONTEND=noninteractive \
-	&& curl -s https://packages.icinga.com/icinga.key \
+RUN curl -s https://packages.icinga.com/icinga.key \
 	| apt-key add -
 RUN echo 'deb https://packages.icinga.com/debian icinga-stretch main' \
 	> /etc/apt/sources.list.d/icinga.list
