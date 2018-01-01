@@ -6,6 +6,7 @@ icinga2satellite:
   volumes:
     - opt_volume:/opt
     - etc_icinga2_volume:/etc/icinga2
+    - var_log_icinga2_volume:/var/log/icinga2
   environment:
     NODE_NAME: "icinga.containers.local"
     NODE_ZONE: "containers.local"
