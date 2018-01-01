@@ -1,0 +1,7 @@
+satellite:
+  image: espfe/icinga2satellite
+  environment:
+    NODE_NAME: "icinga.containers.local"
+    NODE_ZONE: "containers.local"
+    MASTER_HOST: "master.example.com"
+    PKI_TICKET: "abcdefghijkd48a1f996d6e36c3183407da197c2" 
