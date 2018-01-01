@@ -2,7 +2,8 @@
 ## https://github.com/ESPFE/icinga2_satellite
 ## https://www.edv-peuker.de
 
-FROM debian:stretch
+#FROM debian:stretch
+FROM phusion/baseimage
 
 MAINTAINER André Sünnemann - EDV-Systeme Peuker GmbH & Co. KG <a.suennemann@edv-peuker.de>
 
