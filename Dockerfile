@@ -6,7 +6,7 @@ FROM debian:stretch
 
 MAINTAINER André Sünnemann - EDV-Systeme Peuker GmbH & Co. KG <a.suennemann@edv-peuker.de>
 
-LABEL version="0.1.11"
+LABEL version="0.1.12"
 
 RUN apt-get update \
 	&& apt-get dist-upgrade -y \
@@ -40,7 +40,7 @@ RUN rm -rf /etc/icinga2/conf.d/*
 COPY config/ /
 
 
-RUN echo '"include_recursive /opt/icinga2/conf.d"' >> /etc/icinga2/icinga2.conf
+RUN echo 'include_recursive /opt/icinga2/conf.d' >> /etc/icinga2/icinga2.conf
 
 
 EXPOSE 5665

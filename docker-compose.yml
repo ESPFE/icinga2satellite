@@ -1,8 +1,14 @@
-satellite:
+icinga2satellite:
   image: espfe/icinga2satellite
+  restart: always
+  ports:
+    - 5665:5665
+  volumes:
+    - opt_volume:/opt
+    - etc_icinga2_volume:/etc/icinga2
   environment:
     NODE_NAME: "icinga.containers.local"
     NODE_ZONE: "containers.local"
     MASTER_HOST: "master.example.com"
     MASTER_PORT: "5665"
-    PKI_TICKET: "abcdefghijkd48a1f996d6e36c3183407da197c2" 
+    PKI_TICKET: "abcdefghijkd48a1f996d6e36c3183407da197c2"
