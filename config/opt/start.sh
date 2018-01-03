@@ -11,9 +11,22 @@ if [ ! -f '$CHECKFILE' ]; then
 	icinga2 pki save-cert \
 		--host ${MASTER_HOST} \
 		--port ${MASTER_PORT} \
-		--key ${PKI_DIR}/local.key \
-		--cert ${PKI_DIR}/local.crt \
-		--trustedcert ${PKI_DIR}/${MASTER_HOST}.crt
+		--trustedcert ${PKI_DIR}/${MASTER_HOST}.cert
+		
+	icinga2 pki new-cert \
+		--cn ${NODE_NAME} \
+		--key ${PKI_DIR}/${NODE_NAME}.key \
+		--csr ${PKI_DIR}/${NODE_NAME}.csr \
+		--cert ${PKI_DIR}/${NODE_NAME}.cert
+		
+	icinga2 pki request \
+		--key ${PKI_DIR}/${NODE_NAME}.key \
+		--cert ${PKI_DIR}/${NODE_NAME}.cert \
+		--ca ${PKI_DIR}/${MASTER_HOST}.ca \
+		--host ${MASTER_HOST} \
+		--port ${MASTER_PORT} \
+		--ticket ${PKI_TICKET} \
+		--trustedcert ${PKI_DIR}/${MASTER_HOST}.cert
    
 	icinga2 node setup \
 		--accept-commands \
@@ -23,7 +36,7 @@ if [ ! -f '$CHECKFILE' ]; then
    		--ticket ${PKI_TICKET} \
    		--cn ${NODE_NAME} \
    		--zone ${NODE_ZONE} \
-   		--trustedcert ${PKI_DIR}/${MASTER_HOST}.crt
+   		--trustedcert ${PKI_DIR}/${MASTER_HOST}.cert
    
 
 	if [ $? -eq 0 ]; then

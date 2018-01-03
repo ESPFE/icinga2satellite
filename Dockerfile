@@ -40,7 +40,7 @@ RUN rm -rf /etc/icinga2/conf.d/*
 COPY config/ /
 
 
-RUN echo 'include_recursive /opt/icinga2/conf.d' >> /etc/icinga2/icinga2.conf
+RUN echo 'include_recursive "/opt/icinga2/conf.d"' >> /etc/icinga2/icinga2.conf
 
 
 EXPOSE 5665
