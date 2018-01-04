@@ -6,7 +6,7 @@ FROM debian:stretch
 
 MAINTAINER André Sünnemann - EDV-Systeme Peuker GmbH & Co. KG <a.suennemann@edv-peuker.de>
 
-LABEL version="0.1.12"
+LABEL version="1.0.0"
 
 RUN apt-get update \
 	&& apt-get dist-upgrade -y \

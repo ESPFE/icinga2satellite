@@ -4,8 +4,8 @@ icinga2satellite:
   ports:
     - 5665:5665
   volumes:
-    - opt_volume:/opt
-    - etc_icinga2_volume:/etc/icinga2
+    - opt_esp_volume:/opt/esp
+    - etc_icinga2_pki_volume:/etc/icinga2/pki
     - var_log_icinga2_volume:/var/log/icinga2
   environment:
     NODE_NAME: "icinga.containers.local"
