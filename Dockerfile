@@ -18,7 +18,8 @@ RUN apt-get update \
 		supervisor \
 		bc\
 		libnet-snmp-perl \
-		libsnmp-perl
+		libsnmp-perl \
+		coreutils
 		
 RUN curl -s https://packages.icinga.com/icinga.key \
 	| apt-key add -
