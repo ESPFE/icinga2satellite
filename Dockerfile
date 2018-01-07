@@ -15,7 +15,10 @@ RUN apt-get update \
 		apt-transport-https \
 		bash \
 		gnupg \
-		supervisor
+		supervisor \
+		bc\
+		libnet-snmp-perl \
+		libsnmp-perl
 		
 RUN curl -s https://packages.icinga.com/icinga.key \
 	| apt-key add -
