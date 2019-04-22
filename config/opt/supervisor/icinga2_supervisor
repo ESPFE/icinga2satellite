@@ -2,6 +2,8 @@
 
 service icinga2 start
 
+exit 1
+
 # Allow any signal which would kill a process to stop server
 #trap "service icinga2 stop" HUP INT QUIT ABRT ALRM TERM TSTP
 
