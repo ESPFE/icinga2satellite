@@ -43,7 +43,7 @@ COPY config/ /
 
 RUN echo 'include_recursive "/opt/icinga2/conf.d"' >> /etc/icinga2/icinga2.conf
 RUN echo 'const CustomPluginDir = "/opt/icinga2/plugins"' >> /etc/icinga2/constants.conf
-#RUN ln -s /usr/bin/basename /bin/basename
+RUN ln -s /usr/bin/basename /bin/basename
 
 
 EXPOSE 5665
