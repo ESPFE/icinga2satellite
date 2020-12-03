@@ -105,7 +105,7 @@ done
 
 # Plugin processing
 # Model slots number
-MODEL_SLOTS=`$CMD_SNMPWALK -v $VERSION -c $COMMUNITY $HOSTNAME $OID_MODELNAME -Oav | grep -v '\-\-' | wc -l`
+MODEL_SLOTS=`$CMD_SNMPWALK -v $VERSION -c $COMMUNITY $HOSTNAME $OID_HDTEMP -Oav | grep -v '\-\-' | wc -l`
 
 # CPU Temp
 CPU_TEMP=`$CMD_SNMPWALK -v $VERSION -c $COMMUNITY $HOSTNAME $OID_CPUTEMP -Oav | cut -c '10-11'`
