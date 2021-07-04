@@ -43,6 +43,8 @@ RUN apt-get update \
 RUN apt-get clean
 RUN download-mibs
 RUN rm -rf /etc/icinga2/conf.d/*
+## delete wrong snmp file
+RUN rm /usr/share/snmp/mibs/ietf/SNMPv2-PDU
 COPY config/ /
 
 RUN echo 'include_recursive "/opt/icinga2/conf.d"' >> /etc/icinga2/icinga2.conf
