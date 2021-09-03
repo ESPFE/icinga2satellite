@@ -1,5 +1,5 @@
 icinga2satellite:
-  image: espfe/icinga2satellite
+  image: icinga2satellite
   restart: always
   ports:
     - 5665:5665
