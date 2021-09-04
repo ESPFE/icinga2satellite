@@ -21,8 +21,8 @@ services:
       - etc_icinga2_pki_volume:/etc/icinga2/pki
       - var_log_icinga2_volume:/var/log/icinga2
     environment:
-      NODE_NAME: "icinga.DOMAIN.LOCAL"
-      NODE_ZONE: "DOMAIN.LOCAL"
-      MASTER_HOST: "YOUR.ICINGA2.MASTER.HOST"
+      NODE_NAME: "icinga2.satelite.dom"
+      NODE_ZONE: "CLIENT_ZONE_NAME"
+      MASTER_HOST: "ICINGA2.MASTER.HOST"
       MASTER_PORT: "5665"
-      PKI_TICKET: "1234567890asdfqwerölkjsdf"
+      PKI_TICKET: "asdfqwerdfasdgdrgasdfasdf"
