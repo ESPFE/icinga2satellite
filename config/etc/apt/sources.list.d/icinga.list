@@ -1,0 +1,2 @@
+deb [signed-by=/usr/share/keyrings/icinga-archive-keyring.gpg] http://packages.icinga.com/debian icinga-bullseye main
+deb-src [signed-by=/usr/share/keyrings/icinga-archive-keyring.gpg] http://packages.icinga.com/debian icinga-bullseye main

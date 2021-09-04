@@ -1,15 +1,28 @@
-icinga2satellite:
-  image: icinga2satellite
-  restart: always
-  ports:
-    - 5665:5665
-  volumes:
-    - opt_esp_volume:/opt/esp
-    - etc_icinga2_pki_volume:/etc/icinga2/pki
-    - var_log_icinga2_volume:/var/log/icinga2
-  environment:
-    NODE_NAME: "icinga.containers.local"
-    NODE_ZONE: "containers.local"
-    MASTER_HOST: "master.example.com"
-    MASTER_PORT: "5665"
-    PKI_TICKET: "abcdefghijkd48a1f996d6e36c3183407da197c2"
+version: '2'
+
+volumes:
+  opt_esp_volume:
+    driver: local
+  etc_icinga2_pki_volume:
+    driver: local
+  var_log_icinga2_volume:
+    driver: local
+
+services:
+  icinga2satellite:
+    build: ./
+    image: espfe/icinga2satellite:latest
+    container_name: icinga2satellite
+    restart: always
+    ports:
+      - 5665:5665
+    volumes:
+      - opt_esp_volume:/opt/esp
+      - etc_icinga2_pki_volume:/etc/icinga2/pki
+      - var_log_icinga2_volume:/var/log/icinga2
+    environment:
+      NODE_NAME: "icinga.DOMAIN.LOCAL"
+      NODE_ZONE: "DOMAIN.LOCAL"
+      MASTER_HOST: "YOUR.ICINGA2.MASTER.HOST"
+      MASTER_PORT: "5665"
+      PKI_TICKET: "1234567890asdfqwerölkjsdf"
