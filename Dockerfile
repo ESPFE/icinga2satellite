@@ -32,7 +32,10 @@ RUN curl https://packages.icinga.com/icinga.key | gpg --dearmor -o /usr/share/ke
 COPY ./config/etc/apt/sources.list.d/icinga.list /etc/apt/sources.list.d/icinga.list
 
 RUN apt-get update \
-	&& apt-get install -y icinga2 monitoring-plugins snmp-mibs-downloader
+	&& apt-get install -y icinga2 \
+		monitoring-plugins \
+		nagios-plugins-contrib \
+		snmp-mibs-downloader
 
 RUN apt-get clean
 RUN download-mibs
